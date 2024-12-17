@@ -23,15 +23,16 @@ struct ExpandingButtonView: View {
                 //This should be the onBoarding screen
                     //The BottomSheetView should also appear on this instant
             if isExpanded {
-                    OnBoardView()
+                OnBoardView(isExpanded: $isExpanded)
                     
                         .cornerRadius(40)
-                        .ignoresSafeArea()
                         .frame(width: UIScreen.main.bounds.width,
                                height: UIScreen.main.bounds.height)
-                    
+                        .ignoresSafeArea()
                     //In order to have the view be summoned from the center
                         .transition(.scale(scale: 0.1, anchor: .center))
+                        .opacity(isExpanded ? 1 : 0) 
+                        .animation(.easeIn(duration: 1), value: isExpanded)
 
             }
             
@@ -46,6 +47,7 @@ struct ExpandingButtonView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .frame(width: 40, height: 40)
                     .foregroundColor(.white)
+                    .opacity(isExpanded ? 0 : 1)
             }
             .animation(.spring(response: 0.6, dampingFraction: 0.8), value: isExpanded)
                 // Long press gesture
@@ -55,6 +57,7 @@ struct ExpandingButtonView: View {
 //                    isExpanded.toggle()
 //                }
             }
+            .animation(.spring(response: 0.6, dampingFraction: 0.8), value: isExpanded)
         }
     }
 

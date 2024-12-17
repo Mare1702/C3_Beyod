@@ -98,7 +98,7 @@ struct HomeView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .frame(width: 40, height: 40)
                             .foregroundStyle(Color.purple)
-                            .opacity(0.1)
+                            .opacity(0)
                     }
                     
                     Spacer()
@@ -116,7 +116,7 @@ struct HomeView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .frame(width: 40, height: 40)
                             .foregroundStyle(Color.purple)
-                            .opacity(0.1)
+                            .opacity(0)
                     }
                 }
             }   
