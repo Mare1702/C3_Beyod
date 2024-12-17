@@ -11,7 +11,7 @@ import SwiftUI
 struct C3_BeyodApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ExpandingButtonView()
         }
     }
 }
