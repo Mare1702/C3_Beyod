@@ -10,19 +10,15 @@ import SwiftUI
 struct BottomSheetView: View {
     
     @State var translation: CGSize = .zero
-    @State var offsetY: CGFloat = 10
+    @State var offsetY: CGFloat = 758
     
     var body: some View {
         ZStack{
             content
-            
-            Image(systemName: "xmark.circle.fill")
-                .fontWeight(.bold)
+            Capsule()
+                .frame(width: 50, height: 6)
                 .foregroundColor(.white)
-                .background(Color("BackgroundGray"))
-                //.clipShape(Circle())
-
-            
+                .padding(.top, 775)
         }
     }
     
@@ -32,7 +28,7 @@ struct BottomSheetView: View {
                 
                 
                 //We can display the contesnts of the BottomSheetView here intead of the Text("Card")
-                Text("Card")
+                BottomSheetContentView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color("BackgroundGray"))
                     .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
