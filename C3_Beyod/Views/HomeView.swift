@@ -13,7 +13,7 @@ struct HomeView: View {
     @State private var appear2 = false
     @State private var appearBright = false
     let palpitation = 7
-    @State private var cuantityOfMusic: Int = 4
+    @State private var cuantityOfMusic: Int = 0
     
     var body: some View {
         ZStack{
