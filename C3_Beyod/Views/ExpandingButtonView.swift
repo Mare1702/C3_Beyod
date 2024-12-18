@@ -13,7 +13,6 @@ struct ExpandingButtonView: View {
     
     var body: some View {
         ZStack {
-            
             //If the view is not expanded this view is shown in the background
                 //This should be replaced by the HomeView
             HomeView()
@@ -26,13 +25,12 @@ struct ExpandingButtonView: View {
                 OnBoardView(isExpanded: $isExpanded)
                     
                         .cornerRadius(40)
-                        .frame(width: UIScreen.main.bounds.width,
-                               height: UIScreen.main.bounds.height)
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                         .ignoresSafeArea()
                     //In order to have the view be summoned from the center
-                        .transition(.scale(scale: 0.1, anchor: .center))
-                        .opacity(isExpanded ? 1 : 0) 
-                        .animation(.easeIn(duration: 1), value: isExpanded)
+                        .transition(.scale)
+                        //.opacity(isExpanded ? 1 : 0)
+                       // .animation(.easeIn(duration: 1), value: isExpanded)
 
             }
             
@@ -42,7 +40,7 @@ struct ExpandingButtonView: View {
                 //Action empty
                 withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
                     isExpanded.toggle()
-                }
+            }
             } label: {
                 RoundedRectangle(cornerRadius: 10)
                     .frame(width: 40, height: 40)
@@ -56,8 +54,11 @@ struct ExpandingButtonView: View {
 //                withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
 //                    isExpanded.toggle()
 //                }
+            
+            //Modal View
+            
+            
             }
-            .animation(.spring(response: 0.6, dampingFraction: 0.8), value: isExpanded)
         }
     }
 
