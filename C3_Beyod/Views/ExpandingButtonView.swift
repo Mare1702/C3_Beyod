@@ -58,7 +58,6 @@ struct ExpandingButtonView: View {
                 //                }
                 
                 //Modal View
-                let display = proxy.size.height / 5
                 BottomSheetView()
             }
         }
